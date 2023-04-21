@@ -60,6 +60,7 @@ while getopts ":hb:p:s:c:t:v:" arg; do
     esac
 done
 
+echo "BIND_ADDRESS: ${BIND_ADDRESS}, BIND_PORT: ${BIND_PORT}, TEST_COMPONENTS: ${TEST_COMPONENTS}, SECURITY_ENABLED: ${SECURITY_ENABLED}, VERSION: ${VERSION}"
 
 if [ -z "$BIND_ADDRESS" ]
 then
