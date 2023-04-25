@@ -23,7 +23,7 @@ OSD_COMPONENT_TEST_MAP=( "OpenSearch-Dashboards:opensearch-dashboards"
                          "mlCommonsDashboards:ml-commons-dashboards"
                        )
 
-[ -f $OSD_BUILD_MANIFEST ] && TEST_TYPE="manifest" || TEST_TYPE="default"
+[  $OSD_BUILD_MANIFEST ] && TEST_TYPE="manifest" || TEST_TYPE="default"
 [ ! `echo $SHELL | grep 'bash'` ] && echo "You must run this script with bash as other shells like zsh will fail the script, exit in 10" && sleep 10 && exit 1
 
 # Checks if build manifest in parent directory of current directory under local-test-cluster/opensearch-dashboards-*
