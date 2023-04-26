@@ -2,8 +2,6 @@
 
 set -e
 
-. ./test_finder.sh
-
 function usage() {
     echo ""
     echo "This script is used to run integration tests for plugin installed on a remote OpenSearch/Dashboards cluster."
@@ -63,6 +61,8 @@ while getopts ":hb:p:s:c:t:v:o:" arg; do
             ;;
     esac
 done
+
+. ./test_finder.sh
 
 echo "BIND_ADDRESS: ${BIND_ADDRESS}, BIND_PORT: ${BIND_PORT}, TEST_COMPONENTS: ${TEST_COMPONENTS}, SECURITY_ENABLED: ${SECURITY_ENABLED}, VERSION: ${VERSION}"
 
