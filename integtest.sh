@@ -20,11 +20,12 @@ function usage() {
     echo -e "-c CREDENTIAL\t(usename:password), no defaults, effective when SECURITY_ENABLED=true."
     echo -e "-t TEST_COMPONENTS\t(OpenSearch-Dashboards reportsDashboards etc.), optional, specify test components, separate with space, else test everything."
     echo -e "-v VERSION\t, no defaults, indicates the OpenSearch version to test."
+    echo -e "-o OPTION\t, no defaults, determine the TEST_TYPE value among(default, manifest) in test_finder.sh, optional."
     echo -e "-h\tPrint this message."
     echo "--------------------------------------------------------------------------"
 }
 
-while getopts ":hb:p:s:c:t:v:" arg; do
+while getopts ":hb:p:s:c:t:v:o:" arg; do
     case $arg in
         h)
             usage
@@ -47,6 +48,9 @@ while getopts ":hb:p:s:c:t:v:" arg; do
             ;;
         v)
             VERSION=$OPTARG
+            ;;
+        o)
+            OPTION=$OPTARG
             ;;
         :)
             echo "-${OPTARG} requires an argument"
